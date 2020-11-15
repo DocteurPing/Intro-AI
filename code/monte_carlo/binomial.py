@@ -5,7 +5,8 @@ import scipy.special
 def expectation(n, p):
     expe = 0
     for k in range(n+1):
-        expe += k*scipy.special.binom(n, k)*p**k*(1-p)**(n-k)
+        # EDIT HERE
+        expe += k*scipy.special.binom(n, k)*2
     return(expe)
 
 

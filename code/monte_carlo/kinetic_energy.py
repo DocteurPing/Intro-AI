@@ -9,9 +9,9 @@ electron_volt = 1.602e-19 #in Joules
 def approximate(N):
     estimator = 0
     for i in range(N):
-        estimator += np.random.uniform(0, 1000)**2
+        estimator += np.random.uniform(0, 1000)
     estimator = estimator * mass/2
-    return estimator/N
+    return estimator
 
 
 # in that case we can acutally compute the correct value

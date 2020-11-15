@@ -76,13 +76,14 @@ def test_linear_separator(dataset, a, offset, data_1, data_2):
     distances = []
     # compute the distance between each point in the
     # separator and the dataset
+    # MISTAKE IN THIS LOOP
     for point in separator:
         # repeat the point to use linalg.norm
         point_repeated = np.tile(point, (data.shape[0], 1))
         # distances between this point and the dataset
         point_distances = np.linalg.norm(point_repeated-data, axis=1)
         # take the minimum
-        point_distance_to_dataset = min(point_distances)
+        point_distance_to_dataset = max(point_distances)
         # store this distance
         distances.append(point_distance_to_dataset)
     # the margin is the minimum of these distances
@@ -119,7 +120,7 @@ def test_linear_separator(dataset, a, offset, data_1, data_2):
 # test_linear_separator(6, -2400, data_1, data_2)
 # test_linear_separator(6, -2600, data_1, data_2)
 
-nb_test = 10
+nb_test = 8
 for test_index in range(nb_test):
     a = np.random.uniform(4.5, 7.5)
     b = np.random.randint(-3000, -2000)

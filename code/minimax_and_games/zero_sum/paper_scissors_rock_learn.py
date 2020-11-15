@@ -47,15 +47,13 @@ for game in range(number_of_games):
     # play a game
     result, action_a, action_b = play(player_A_strategy, player_B_strategy)
     # count the actions played by B
-    player_B_counter[player_B_actions.index(action_b)] += 1
+    player_B_counter = [1, 1, 1]
     # compute the probabilities played by B
     player_B_learned = [x/sum(player_B_counter) for x in player_B_counter]
 
     # update our strategy
-    most_probable_action_B_index = player_B_learned.index(
-        max(player_B_learned))
-    least_probable_action_B_index = player_B_learned.index(
-        min(player_B_learned))
+    most_probable_action_B_index = 1
+    least_probable_action_B_index = 2
     most_probable_action_B = player_B_actions[most_probable_action_B_index]
     least_probable_action_B = player_B_actions[least_probable_action_B_index]
 
@@ -76,10 +74,9 @@ for game in range(number_of_games):
     A_intermediate_action_index = remaining_actions.pop()
 
     # define our strategy
-    player_A_strategy[A_best_action_index] = max(player_B_learned)
-    player_A_strategy[A_worst_action_index] = min(player_B_learned)
-    player_A_strategy[A_intermediate_action_index] = 1 - \
-        max(player_B_learned)-min(player_B_learned)
+    player_A_strategy[A_best_action_index] = 0
+    player_A_strategy[A_worst_action_index] = 1
+    player_A_strategy[A_intermediate_action_index] = 0
 
     # print strategies
     print(player_B_learned)

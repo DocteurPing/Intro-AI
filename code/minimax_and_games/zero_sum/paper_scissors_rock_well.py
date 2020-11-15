@@ -1,6 +1,6 @@
 import numpy as np
 
-player_A_strategy = [2/4, 0/4, 0/4, 2/4]
+player_A_strategy = [1/4, 1/4, 1/4, 1/4]
 player_A_actions = ["paper", "scissors", "rock", "well"]
 player_B_strategy = [1/4, 1/4, 1/4, 1/4]
 player_B_actions = ["paper", "scissors", "rock", "well"]

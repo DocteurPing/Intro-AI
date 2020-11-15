@@ -9,9 +9,9 @@ import matplotlib.pyplot as plt
 
 
 # HYPERPARAMETERS
-hidden_dim = 2
-Learning_rate = 1e-4
-Nb_steps = 500000
+hidden_dim = 1
+Learning_rate = 1e-3
+Nb_steps = 50000
 Nb_plotted_steps = 500
 
 # selection of the data
